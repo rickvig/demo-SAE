@@ -4067,6 +4067,246 @@ function init_echarts() {
 
     }
 
+    if ($('#ranking-portugues').length) {
+        console.log("portugues");
+
+        var echartBar = echarts.init(document.getElementById('ranking-portugues'), theme);
+
+        echartBar.setOption({
+          title: {
+            text: 'Dempenho em Português',
+            subtext: 'do maior para menor'
+          },
+          tooltip: {
+            trigger: 'axis'
+          },
+          legend: {
+            x: 100,
+            data: ['2015', '2016']
+          },
+          toolbox: {
+            show: true,
+            feature: {
+              saveAsImage: {
+                show: true,
+                title: "Save Image"
+              }
+            }
+          },
+          calculable: true,
+          xAxis: [{
+            type: 'value',
+            boundaryGap: [0, 0.01]
+          }],
+          yAxis: [{
+            type: 'category',
+            data: [
+              'Escola 11',
+              'Escola 6',
+              'Escola 8',
+              'Escola 2',
+              'Escola 1',
+              'Escola 7',
+              'Escola 10',
+              'Escola 9',
+              'Escola 4',
+              'Escola 5',
+              'Escola 3',
+              'Escola 12']
+          }],
+          series: [{
+            name: 'Português',
+            type: 'bar',
+            data: [
+              204.9,
+              206.6,
+              211.5,
+              214.2,
+              218.7,
+              219.5,
+              223.6,
+              229.1,
+              230.8,
+              240.4,
+              248.1,
+              257.4]
+          }]
+        });
+    }
+
+    if ($('#ranking-matematica').length) {
+        console.log("matematica");
+
+        var echartBar = echarts.init(document.getElementById('ranking-matematica'), theme);
+
+        echartBar.setOption({
+          title: {
+            text: 'Dempenho em Matemática',
+            subtext: 'do maior para menor'
+          },
+          tooltip: {
+            trigger: 'axis'
+          },
+          legend: {
+            x: 100,
+            data: ['2015', '2016']
+          },
+          toolbox: {
+            show: true,
+            feature: {
+              saveAsImage: {
+                show: true,
+                title: "Save Image"
+              }
+            }
+          },
+          calculable: true,
+          xAxis: [{
+            type: 'value',
+            boundaryGap: [0, 0.01]
+          }],
+          yAxis: [{
+            type: 'category',
+            data: [
+              'Escola 6',
+              'Escola 11',
+              'Escola 5',
+              'Escola 7',
+              'Escola 3',
+              'Escola 1',
+              'Escola 12',
+              'Escola 4',
+              'Escola 8',
+              'Escola 2',
+              'Escola 10',
+              'Escola 9']
+          }],
+          series: [{
+            name: 'Matemática',
+            type: 'bar',
+            data: [
+              160.3,
+              184.4,
+              187.2,
+              187.6,
+              195.6,
+              195.7,
+              198.7,
+              199.5,
+              200.2,
+              201.6,
+              203.6,
+              210.2]
+          }]
+        });
+    }
+
+    if ($('#desempenho-portugues').length) {
+        console.log("desempenho-portugues");
+
+        var echartBar = echarts.init(document.getElementById('desempenho-portugues'), theme);
+
+        echartBar.setOption({
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {            // Indicador de eixo, o gatilho do eixo é válido
+                    type: 'shadow'        // O padrão é linha reta, opcional é：'line' | 'shadow'
+                }
+            },
+            legend: {
+                data: ['Abaixo do Básico','Básico','Adequado','Avançado']
+            },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            xAxis: {
+                type: 'value'
+            },
+            yAxis: {
+                type: 'category',
+                data: [
+                    'Escola 11',
+                    'Escola 6',
+                    'Escola 8',
+                    'Escola 2',
+                    'Escola 1',
+                    'Escola 7',
+                    'Escola 10',
+                    'Escola 9',
+                    'Escola 4',
+                    'Escola 5',
+                    'Escola 3',
+                    'Escola 12']
+            },
+            series: [
+                {
+                    name: 'Abaixo do Básico',
+                    type: 'bar',
+                    stack: 'total',
+                    label: {
+                        show: true,
+                        position: 'insideRight',
+                    },
+                    itemStyle: {
+                        normal: { 
+                            color: '#d3ebde' 
+                        }
+                    },
+                    data: [68.8, 68, 63, 63.2, 52, 51.6, 57.4, 50, 42.4, 40.5, 0, 0]
+                },
+                {
+                    name: 'Básico',
+                    type: 'bar',
+                    stack: 'total',
+                    label: {
+                        show: true,
+                        position: 'insideRight'
+                    },
+                    itemStyle: {
+                        normal: { 
+                            color: '#92d1b8' 
+                        }
+                    },
+                    data: [31.3, 30, 35.6, 31.6, 46, 48.4, 29.5, 50, 52.2, 44, 100, 100]
+                },
+                {
+                    name: 'Adequado',
+                    type: 'bar',
+                    stack: 'total',
+                    label: {
+                        show: true,
+                        position: 'insideRight'
+                    },
+                    itemStyle: {
+                        normal: { 
+                            color: '#57bf9a' 
+                        }
+                    },
+                    data: [0, 2, 1.4, 5.3, 2, 0, 11.5, 0, 5.4, 14.3, 0, 0]
+                },
+                {
+                    name: 'Avançado',
+                    type: 'bar',
+                    stack: 'total',
+                    label: {
+                        show: true,
+                        position: 'insideRight'
+                    },
+                    itemStyle: {
+                        normal: { 
+                            color: '#38b07f' 
+                        }
+                    },
+                    data: [0, 0, 0, 0, 0, 0, 1.6, 0, 0, 1.2, 0, 0]
+                },
+
+            ]
+        });
+    }
+
     //echart Bar Horizontal
 
     if ($('#echart_bar_horizontal').length) {
